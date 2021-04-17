@@ -58,8 +58,8 @@ int updateProduct(product *p[], int count) {
 
 int deleteProduct(product *p[], int count) {
     listProduct(p, count);
-    int num;    //  삭제하려는 제품 번호
-    int n;  //  삭제 여부 확인 체크
+    int num;
+    int n; 
     printf("삭제하려는 제품 번호 > ");
     scanf("%d", &num);
     printf("%d / %s / %d / %d / %d점 / %d개\n", num, p[num-1]->name, p[num-1]->weight, p[num-1]->price, p[num-1]->stars, p[num-1]->num_stars);
