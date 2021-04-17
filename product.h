@@ -31,6 +31,9 @@ int deleteProduct(product *p[], int count); //  delete
 p->포인터배열 변수
 count -> 현재까지 저장되어 있는 제품의 개수
 */
+
+void searchProduct(product *p[], int count);    //  제품 검색
+
 void searchNameProduct(product *p[], int count);    //  제품 이름 검색
 /*
 찾고자 하는 제품의 이름을 입력받아
@@ -45,10 +48,13 @@ void searchPriceProduct(product *p[], int count); // 제품 가격 검색
 p->포인터배열 변수
 count -> 현재까지 저장되어 있는 제품의 개수
 */
-void searchStartsProduct(product *p[], int count); // 제품 별개수 검색
+void searchStarsProduct(product *p[], int count); // 제품 별개수 검색
 /*
 원하는 제품 별개수를 입력받아
 입력받은 별 개수와 같은 개수가 저장되어있는 제품의 정보 출력
 p->포인터배열 변수
 count -> 현재까지 저장되어 있는 제품의 개수
 */
+
+int saveProduct(product *p[], int count);   //  제품저장
+int loadProduct(product *p[], int count);   //  제품 정보 불러오기
