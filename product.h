@@ -56,5 +56,5 @@ p->포인터배열 변수
 count -> 현재까지 저장되어 있는 제품의 개수
 */
 
-int saveProduct(product *p[], int count);   //  제품저장
+int saveProduct(product *p[], int count, int num_count);
 int loadProduct(product *p[], int count);   //  제품 정보 불러오기

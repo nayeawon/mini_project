@@ -71,7 +71,7 @@ int main() {
                 searchProduct(p, count);
                 break;
             case SAVE:
-                check = saveProduct(p, count);
+                check = saveProduct(p, count, edited_count);
                 if (check == 1) {
                     printf("제품정보를 저장하였습니다.\n");
                 }

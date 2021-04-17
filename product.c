@@ -62,7 +62,7 @@ int deleteProduct(product *p[], int count) {
     int n;  //  삭제 여부 확인 체크
     printf("삭제하려는 제품 번호 > ");
     scanf("%d", &num);
-    printf("%d / %s / %d / %d / %d점 / %d개\n", num+1, p[num-1]->name, p[num-1]->weight, p[num-1]->price, p[num-1]->stars, p[num-1]->num_stars);
+    printf("%d / %s / %d / %d / %d점 / %d개\n", num, p[num-1]->name, p[num-1]->weight, p[num-1]->price, p[num-1]->stars, p[num-1]->num_stars);
 	printf("정말로 삭제하시겠습니까?(삭제 : 1) > ");
     scanf("%d", &n);
     if (n == 1) {
@@ -130,7 +130,7 @@ void searchStarsProduct(product *p[], int count) {
     scanf("%d", &num);
     printf("\n번호 / 제품명 / 중량 / 판매가격 / 별점(1~5) / 별점개수\n");
     for (int i=0; i<count; i++) {
-        if (p[i]->price >= num) {
+        if (p[i]->stars >= num) {
             printf("%d / %s / %d / %d / %d점 / %d개\n", i+1, p[i]->name, p[i]->weight, p[i]->price, p[i]->stars, p[i]->num_stars);
             check++;
         }
@@ -138,12 +138,13 @@ void searchStarsProduct(product *p[], int count) {
     printf("총 %d개의 제품이 검색되었습니다.\n", check);
 }
 
-int saveProduct(product *p[], int count) {
+int saveProduct(product *p[], int count, int num_count) {
     FILE *file;
     file = fopen("save.txt", "w");
-    fprintf(file, "제품 정보 (총 %d개)\n\n", count);
+    fprintf(file, "제품 정보 (총 %d개)\n\n", num_count);
     fprintf(file, "번호 / 제품명 / 중량 / 판매가격 / 별점(1~5) / 별점개수\n");
     for (int i=0; i<count; i++) {
+        if (p[i]->name[0] == 0) continue;
         fprintf(file, "%d / %s / %d / %d / %d점 / %d개\n", i+1, p[i]->name, p[i]->weight, p[i]->price, p[i]->stars, p[i]->num_stars);
     }
     fclose(file);
